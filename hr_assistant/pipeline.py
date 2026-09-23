@@ -21,7 +21,7 @@ from hr_assistant.vector_store import (
 def build_vector_store_for_document(file_path: str = config.DATA_FILE_PATH):
     """Load + split + embed the document, reusing a saved index if we have one"""
     if vector_store_exists():
-        print("Found a saved vector store on disk, loading it ")
+        print("Found a saved vector store on disk, loading it (fast, no re-embedding) ")
         return load_vector_store()
 
     print("No saved vector store found, building vector store from scratch...")
