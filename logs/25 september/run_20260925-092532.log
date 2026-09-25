@@ -1,0 +1,25 @@
+2026-09-25 09:25:33,101 | hr_assistant.pipeline | INFO | Building HR Assistant agent
+2026-09-25 09:25:33,101 | hr_assistant.pipeline | INFO | Found a saved vector store on disk, loading it
+2026-09-25 09:25:33,101 | hr_assistant.vector_store | INFO | Loading FAISS index from data\faiss_index
+2026-09-25 09:25:33,101 | hr_assistant.embeddings | INFO | Initializing embeddings model jina-embeddings-v2-base-en
+2026-09-25 09:25:33,104 | faiss.loader | INFO | Loading faiss with AVX2 support.
+2026-09-25 09:25:33,104 | faiss.loader | INFO | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-09-25 09:25:33,104 | faiss.loader | INFO | Loading faiss.
+2026-09-25 09:25:33,125 | faiss.loader | INFO | Successfully loaded faiss.
+2026-09-25 09:25:33,132 | hr_assistant.vector_store | INFO | Retrieving top k matching chunks from <langchain_community.vectorstores.faiss.FAISS object at 0x000001FD4965D590>
+2026-09-25 09:25:33,135 | hr_assistant.llm | INFO | Initializing LLM openai/gpt-oss-120b
+2026-09-25 09:25:33,281 | hr_assistant.agent | INFO | Creating HR-Assistant agent
+2026-09-25 09:25:33,284 | hr_assistant.agent | INFO | HR-Assistant agent ready
+2026-09-25 09:25:33,284 | hr_assistant.pipeline | INFO | HR assistant is ready to take questions
+2026-09-25 09:25:44,760 | __main__ | INFO | === Streamlit run: new question received ===
+2026-09-25 09:25:44,761 | hr_assistant.pipeline | INFO | User question: hi
+2026-09-25 09:25:45,480 | httpx | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-25 09:25:45,493 | hr_assistant.pipeline | INFO | Final answer: Hello! 👋 How can I help you today?
+2026-09-25 09:25:55,753 | __main__ | INFO | === Streamlit run: new question received ===
+2026-09-25 09:25:55,754 | hr_assistant.pipeline | INFO | User question: i am feeling lonely
+2026-09-25 09:25:56,532 | httpx | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-25 09:25:56,536 | hr_assistant.tools | INFO | search_hr_policy called with query: employee assistance program mental health resources
+2026-09-25 09:25:57,615 | hr_assistant.tools | INFO | Found 3 matching chunks
+2026-09-25 09:25:58,419 | httpx | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-25 09:25:58,421 | hr_assistant.pipeline | INFO | Final answer: I’m really sorry you’re feeling this way. Based on the HR policy documents I have access to, there isn’t specific information about an employee assistance program or mental‑health resources. If you’d like, I can help you reach out to HR directly so they can point you to the appropriate support services. Let me know how you’d like to proceed.

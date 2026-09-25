@@ -9,11 +9,13 @@ import logging
 import os
 from datetime import datetime
 
-LOGS_DIR = "logs"
-os.makedirs(LOGS_DIR, exist_ok=True)
+current_date = datetime.now().strftime("%d %B").lower()
 
+parent_dir = "logs"
+path = os.path.join(parent_dir, current_date)
+os.makedirs(path, exist_ok=True)
 _run_started_at = datetime.now().strftime("%Y%m%d-%H%M%S")
-RUN_LOG_FILE = os.path.join(LOGS_DIR, f"run_{_run_started_at}.log")
+RUN_LOG_FILE = os.path.join(path, f"run_{_run_started_at}.log")
 
 logging.basicConfig(
     level = logging.INFO,
